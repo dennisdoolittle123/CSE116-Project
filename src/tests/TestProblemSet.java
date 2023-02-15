@@ -205,4 +205,11 @@ public class TestProblemSet {
         actual = ProblemSet.sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
     }
+    @Test
+    public void zerotester() {
+        int input = 0;
+        int expected = 0;
+        int actual = ProblemSet.sumOfDigits(input);
+        assertEquals(expected, actual);
+    }
 }
