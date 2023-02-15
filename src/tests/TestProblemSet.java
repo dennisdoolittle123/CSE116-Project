@@ -28,6 +28,13 @@ public class TestProblemSet {
         assertEquals(expected, actualans, 0.001);
 
     }
+    @Test
+    public void testSumOfDigitsNegativeSingleDigitNumber() {
+        int input = -9;
+        int expected = 9;
+        int actual = ProblemSet.sumOfDigits(Math.abs(input));
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void testaveragesingleton() {
@@ -38,6 +45,7 @@ public class TestProblemSet {
         assertEquals(expected, actualans, 0.001);
 
     }
+
 
     @Test
     public void testAverageOffByOne() {
@@ -149,7 +157,7 @@ public class TestProblemSet {
     @Test
     public void testSumOfDigitsNoNegatives() {
         int input = -13;
-        int expected = 4 ;
+        int expected = 4;
         int actual = ProblemSet.sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
 
@@ -158,6 +166,7 @@ public class TestProblemSet {
 
 
     }
+
     @Test
     public void testSumOfDigtsNoNegatives() {
         int input = 123;
@@ -170,6 +179,7 @@ public class TestProblemSet {
 
 
     }
+
     @Test
     public void testSumOfDigitsNoNegatives2() {
         int input = -123;
@@ -178,16 +188,18 @@ public class TestProblemSet {
         assertEquals(expected, actual);
 
     }
+
     @Test
     public void testAverageWithLargeLists() {
         ArrayList<Double> numbers = new ArrayList<Double>();
         for (int i = 0; i < 100000; i++) {
-            numbers.add((double)i);
+            numbers.add((double) i);
         }
         double expected = 49999.5;
         double actual = ProblemSet.average(numbers);
         assertEquals(expected, actual, 0.001);
     }
+
     @Test
     public void testSumOfDigitsNoNegatives3() {
         int input = -123;
@@ -205,6 +217,7 @@ public class TestProblemSet {
         actual = ProblemSet.sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
     }
+
     @Test
     public void zerotester() {
         int input = 0;
@@ -212,18 +225,8 @@ public class TestProblemSet {
         int actual = ProblemSet.sumOfDigits(input);
         assertEquals(expected, actual);
     }
-    @Test
-    public void testSumOfDigitsNoNegativesfinal() {
-        int input1 = 0;
-        int input2 = 1;
-        int input3 = 999;
-        int input4 = -123;
-        int input5 = -1;
 
-        assertEquals(0, ProblemSet.sumOfDigits(input1));
-        assertEquals(1, ProblemSet.sumOfDigits(input2));
-        assertEquals(27, ProblemSet.sumOfDigits(input3));
-        assertEquals(6, ProblemSet.sumOfDigits(Math.abs(input4)));
-        assertEquals(1, ProblemSet.sumOfDigits(Math.abs(input5)));
-    }
+
+
+
 }
