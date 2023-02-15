@@ -121,10 +121,10 @@ public class TestProblemSet {
     @Test
     public void testAverageWithNegativeNumbers() {
         ArrayList<Double> numbers = new ArrayList<Double>();
-        numbers.add(1.0);
+        numbers.add(4.0);
+        numbers.add(4.0);
         numbers.add(-2.0);
-        numbers.add(3.0);
-        double expected = 1.0;
+        double expected = 2.0;
         double actual = ProblemSet.average(numbers);
         assertEquals(expected, actual, 0.001);
     }
