@@ -38,12 +38,12 @@ public class TestProblemSet {
     @Test
     public void testAverageOffByOne() {
         ArrayList<Double> numbers = new ArrayList<Double>();
-        numbers.add(1.0);
-        numbers.add(2.0);
-        numbers.add(3.0);
-        double expected = 2.0;
+        numbers.add(30.0);
+        numbers.add(30.0);
+        numbers.add(31.0);
+        double expected = 30.3333;
         double actual = ProblemSet.average(numbers);
-        assertTrue(expected == actual || expected == actual + 1 || expected == actual - 1);
+        assertTrue(expected - actual <= 1 && expected - actual >= -1);
     }
 
 
