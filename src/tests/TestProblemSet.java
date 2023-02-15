@@ -55,6 +55,13 @@ public class TestProblemSet {
         assertEquals(expected, actual);
     }
     @Test
+    public void testsumOfdigitsmorethan3dig(){
+        int s = 1323;
+        int expected = 9;
+        int actual = ProblemSet.sumOfDigits(s);
+        assertEquals(expected, actual);
+    }
+    @Test
     public void extratestsumofdigits(){
         int a = 0;
         int expected = 0;
@@ -128,6 +135,12 @@ public class TestProblemSet {
         double actual = ProblemSet.average(numbers);
         assertEquals(expected, actual, 0.001);
     }
+    @Test
+    public void testSumOfDigitsNoNegatives() {
+        int input = -143;
+        int expected = 0;
+        int actual = ProblemSet.sumOfDigits(input);
+        assertEquals(expected, actual);
     @Test
     public void testAverageLargeList() {
         ArrayList<Double> numbers = new ArrayList<Double>();
