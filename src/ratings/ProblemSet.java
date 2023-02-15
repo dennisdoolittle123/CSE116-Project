@@ -24,6 +24,7 @@ public class ProblemSet {
 
     }
     public static int sumOfDigits(int x){
+        x = Math.abs(x);
         int sum = 0;
         while (x > 0){
             sum += x % 10;
