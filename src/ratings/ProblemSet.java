@@ -12,6 +12,7 @@ public class ProblemSet {
         for (int i = 0; i < numbers.size(); i += 1) {
             sum += numbers.get(i);
 
+
         }
         return sum / numbers.size();
 
