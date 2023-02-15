@@ -81,6 +81,62 @@ public class TestProblemSet {
         String expected = "four";
         String actual = ProblemSet.bestKey(map);
         assertEquals(expected, actual);
+
+    }
+    @Test
+    public void testSumOfDigitsWithThreeDigitNumbers() {
+        int num1 = 113;
+        int num2 = 426;
+        int expected1 = 5;
+        int expected2 = 12;
+        int actual1 = ProblemSet.sumOfDigits(num1);
+        int actual2 = ProblemSet.sumOfDigits(num2);
+        assertEquals(expected1, actual1);
+        assertEquals(expected2, actual2);
+    }
+    @Test
+    public void testBestKeyposnegmax() {
+        HashMap<String, Integer> map1 = new HashMap<>();
+        String expected1 = "";
+        String actual1 = ProblemSet.bestKey(map1);
+        assertEquals(expected1, actual1);
+
+        HashMap<String, Integer> map2 = new HashMap<>();
+        map2.put("a", 1);
+        map2.put("b", 2);
+        map2.put("c", 2);
+        String expected2 = "b";
+        String actual2 = ProblemSet.bestKey(map2);
+        assertTrue(expected2.equals(actual2) || "c".equals(actual2));
+
+        HashMap<String, Integer> map3 = new HashMap<>();
+        map3.put("a", -1);
+        map3.put("b", -2);
+        map3.put("c", -3);
+        String expected3 = "a";
+        String actual3 = ProblemSet.bestKey(map3);
+        assertTrue(expected3.equals(actual3));
+    }
+
+    @Test
+    public void testAverageWithNegativeNumbers() {
+        ArrayList<Double> numbers = new ArrayList<Double>();
+        numbers.add(1.0);
+        numbers.add(-2.0);
+        numbers.add(3.0);
+        double expected = 1.0;
+        double actual = ProblemSet.average(numbers);
+        assertEquals(expected, actual, 0.001);
+    }
+    @Test
+    public void testAverageLargeList() {
+        ArrayList<Double> numbers = new ArrayList<Double>();
+        for (int i = 0; i < 1000000; i++) {
+            numbers.add((double)i);
+        }
+        double expected = 499999.5;
+        double actual = ProblemSet.average(numbers);
+        assertEquals(expected, actual, 0.001);
     }
 
 
