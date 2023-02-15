@@ -21,7 +21,7 @@ public class TestProblemSet {
         numbers.add(30.0);
         numbers.add(30.0);
         numbers.add(30.0);
-        double expected = 3.0;
+        double expected = 30.0;
         double actualans = ProblemSet.average(numbers);
         assertEquals(expected, actualans,0.001);
 
@@ -57,7 +57,7 @@ public class TestProblemSet {
         map.put("one", 0);
         map.put("two", 0);
         map.put("four", 4);
-        String expected = "three";
+        String expected = "four";
         String actual = ProblemSet.bestKey(map);
         assertEquals(expected, actual);
     }
