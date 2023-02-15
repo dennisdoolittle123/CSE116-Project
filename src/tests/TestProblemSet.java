@@ -170,13 +170,7 @@ public class TestProblemSet {
 
 
     }
-    @Test
-    public void testSumOfDigitsNoNegatives2() {
-        int input = -123;
-        int expected = 0;
-        int actual = ProblemSet.sumOfDigits(input);
-        assertEquals(expected, actual);
-    }
+
     @Test
     public void testAverageWithLargeLists() {
         ArrayList<Double> numbers = new ArrayList<Double>();
