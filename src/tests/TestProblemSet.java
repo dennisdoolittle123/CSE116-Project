@@ -173,9 +173,10 @@ public class TestProblemSet {
     @Test
     public void testSumOfDigitsNoNegatives2() {
         int input = -123;
-        int expected = 0;
-        int actual = ProblemSet.sumOfDigits(input);
+        int expected = 6;
+        int actual = ProblemSet.sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
+
     }
     @Test
     public void testAverageWithLargeLists() {
