@@ -212,4 +212,18 @@ public class TestProblemSet {
         int actual = ProblemSet.sumOfDigits(input);
         assertEquals(expected, actual);
     }
+    @Test
+    public void testSumOfDigitsNoNegativesfinal() {
+        int input1 = 0;
+        int input2 = 1;
+        int input3 = 999;
+        int input4 = -123;
+        int input5 = -1;
+
+        assertEquals(0, ProblemSet.sumOfDigits(input1));
+        assertEquals(1, ProblemSet.sumOfDigits(input2));
+        assertEquals(27, ProblemSet.sumOfDigits(input3));
+        assertEquals(6, ProblemSet.sumOfDigits(Math.abs(input4)));
+        assertEquals(1, ProblemSet.sumOfDigits(Math.abs(input5)));
+    }
 }
