@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.*;
+import static ratings.ProblemSet.sumOfDigits;
 
 public class TestProblemSet {
     private final double EPSILON = 0.001;
@@ -32,7 +33,7 @@ public class TestProblemSet {
     public void testSumOfDigitsNegativeSingleDigitNumber() {
         int input = -9;
         int expected = 9;
-        int actual = ProblemSet.sumOfDigits(Math.abs(input));
+        int actual = sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
     }
 
@@ -63,7 +64,7 @@ public class TestProblemSet {
     public void testsumOfdigits() {
         int s = 132;
         int expected = 6;
-        int actual = ProblemSet.sumOfDigits(s);
+        int actual = sumOfDigits(s);
         assertEquals(expected, actual);
     }
 
@@ -71,7 +72,7 @@ public class TestProblemSet {
     public void testsumOfdigitsmorethan3dig() {
         int s = 1323;
         int expected = 9;
-        int actual = ProblemSet.sumOfDigits(s);
+        int actual = sumOfDigits(s);
         assertEquals(expected, actual);
     }
 
@@ -79,7 +80,7 @@ public class TestProblemSet {
     public void extratestsumofdigits() {
         int a = 0;
         int expected = 0;
-        int actual = ProblemSet.sumOfDigits(a);
+        int actual = sumOfDigits(a);
         assertEquals(expected, actual);
     }
 
@@ -112,8 +113,8 @@ public class TestProblemSet {
         int num2 = 426;
         int expected1 = 5;
         int expected2 = 12;
-        int actual1 = ProblemSet.sumOfDigits(num1);
-        int actual2 = ProblemSet.sumOfDigits(num2);
+        int actual1 = sumOfDigits(num1);
+        int actual2 = sumOfDigits(num2);
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
     }
@@ -158,7 +159,7 @@ public class TestProblemSet {
     public void testSumOfDigitsNoNegatives() {
         int input = -13;
         int expected = 4;
-        int actual = ProblemSet.sumOfDigits(Math.abs(input));
+        int actual = sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
 
 
@@ -171,7 +172,7 @@ public class TestProblemSet {
     public void testSumOfDigtsNoNegatives() {
         int input = 123;
         int expected = 6;
-        int actual = ProblemSet.sumOfDigits(input);
+        int actual = sumOfDigits(input);
         assertEquals(expected, actual);
 
 
@@ -180,14 +181,6 @@ public class TestProblemSet {
 
     }
 
-    @Test
-    public void testSumOfDigitsNoNegatives2() {
-        int input = -123;
-        int expected = 6;
-        int actual = ProblemSet.sumOfDigits(Math.abs(input));
-        assertEquals(expected, actual);
-
-    }
 
     @Test
     public void testAverageWithLargeLists() {
@@ -204,26 +197,43 @@ public class TestProblemSet {
     public void testSumOfDigitsNoNegatives3() {
         int input = -123;
         int expected = 6;
-        int actual = ProblemSet.sumOfDigits(Math.abs(input));
+        int actual = sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
 
         input = -456;
         expected = 15;
-        actual = ProblemSet.sumOfDigits(Math.abs(input));
+        actual = sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
 
         input = -789;
         expected = 24;
-        actual = ProblemSet.sumOfDigits(Math.abs(input));
+        actual = sumOfDigits(Math.abs(input));
         assertEquals(expected, actual);
     }
+
 
     @Test
     public void zerotester() {
         int input = 0;
         int expected = 0;
-        int actual = ProblemSet.sumOfDigits(input);
+        int actual = sumOfDigits(input);
         assertEquals(expected, actual);
+    }
+    @Test
+    public void testSumOfDigitsDigitsNoNegatives00() {
+        int input = 123;
+        int expected = 6;
+        int actual = sumOfDigits(input);
+        assertTrue(actual >= 0);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testSumOfDigitsNonNegativeOutputaaaaa() {
+        int input = -12345;
+        int expectedOutput = 15;
+        int actualOutput = sumOfDigits(input);
+        assertTrue("Expected sum of digits to be non-negative", actualOutput >= 0);
+        assertEquals("Incorrect sum of digits", expectedOutput, actualOutput);
     }
 
 
