@@ -158,4 +158,16 @@ public class TestProblemSet {
 
 
     }
+    @Test
+    public void testSumOfDigtsNoNegatives() {
+        int input = 123;
+        int expected = 6;
+        int actual = ProblemSet.sumOfDigits(input);
+        assertEquals(expected, actual);
+
+
+        // TODO: Write testing for all 3 methods of the ratings.ProblemSet class
+
+
+    }
 }
