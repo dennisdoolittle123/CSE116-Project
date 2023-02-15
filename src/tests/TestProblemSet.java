@@ -145,6 +145,7 @@ public class TestProblemSet {
         assertEquals(expected, actual, 0.001);
     }
 
+
     @Test
     public void testSumOfDigitsNoNegatives() {
         int input = -143;
