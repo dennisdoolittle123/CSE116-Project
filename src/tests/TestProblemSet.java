@@ -27,6 +27,27 @@ public class TestProblemSet {
 
     }
     @Test
+    public void testaveragesingleton(){
+        ArrayList<Double> numbers = new ArrayList<Double>();
+        numbers.add(30.0);
+        double expected = 30.0;
+        double actualans = ProblemSet.average(numbers);
+        assertEquals(expected, actualans,0.001);
+
+    }
+    @Test
+    public void testAverageOffByOne() {
+        ArrayList<Double> numbers = new ArrayList<Double>();
+        numbers.add(1.0);
+        numbers.add(2.0);
+        numbers.add(3.0);
+        double expected = 2.0;
+        double actual = ProblemSet.average(numbers);
+        assertTrue(expected == actual || expected == actual + 1 || expected == actual - 1);
+    }
+
+
+    @Test
     public void testsumOfdigits(){
         int s = 132;
         int expected = 6;
