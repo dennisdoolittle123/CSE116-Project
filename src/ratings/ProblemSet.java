@@ -9,11 +9,8 @@ public class ProblemSet {
 
     public static double average(ArrayList<Double> numbers) {
         double sum = 0.0;
-        for( int i= 0; i < numbers.size(); i +=1){
-            sum+= numbers.get(i);
-
-
-
+        for (int i = 0; i < numbers.size(); i += 1) {
+            sum += numbers.get(i);
 
 
         }
@@ -21,11 +18,43 @@ public class ProblemSet {
 
 
 
+
+    }
+    public static int sumOfDigits(int x){
+        int sum = 0;
+        while (x > 0){
+            sum += x % 10;
+            x /= 10;
+        }
+        return sum;
+
+    }
+
+    public static String bestKey(HashMap<String, Integer> map){
+        String bestKey = "";
+        int max = Integer.MIN_VALUE;
+        for (String key : map.keySet()){
+            int value = map.get(key);
+            if (value > max){
+                bestKey = key;
+                max = value;
+            }
+        }
+        return bestKey;
     }
 
 
 
+
+
+
 }
+
+
+
+
+
+
 
 
     // TODO: Implement this method to return the average of all the numbers in the input ArrayList
@@ -46,6 +75,7 @@ public class ProblemSet {
     // 123 returns 6
     // 57 returns 12
     // -36 returns 9
+
 
 
 
