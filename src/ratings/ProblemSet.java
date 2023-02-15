@@ -40,6 +40,7 @@ public class ProblemSet {
                 max = value;
             }
         }
+
         return bestKey;
     }
 
