@@ -188,4 +188,21 @@ public class TestProblemSet {
         double actual = ProblemSet.average(numbers);
         assertEquals(expected, actual, 0.001);
     }
+    @Test
+    public void testSumOfDigitsNoNegatives3() {
+        int input = -123;
+        int expected = 6;
+        int actual = ProblemSet.sumOfDigits(Math.abs(input));
+        assertEquals(expected, actual);
+
+        input = -456;
+        expected = 15;
+        actual = ProblemSet.sumOfDigits(Math.abs(input));
+        assertEquals(expected, actual);
+
+        input = -789;
+        expected = 24;
+        actual = ProblemSet.sumOfDigits(Math.abs(input));
+        assertEquals(expected, actual);
+    }
 }
