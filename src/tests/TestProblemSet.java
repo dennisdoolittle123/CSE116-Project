@@ -12,29 +12,33 @@ import static org.junit.Assert.*;
 
 public class TestProblemSet {
     private final double EPSILON = 0.001;
-    public void compareDoubles(double d1, double d2){
-        assertTrue(Math.abs(d1-d2)<EPSILON);
+
+    public void compareDoubles(double d1, double d2) {
+        assertTrue(Math.abs(d1 - d2) < EPSILON);
     }
+
     @Test
-    public void testaverage(){
+    public void testaverage() {
         ArrayList<Double> numbers = new ArrayList<Double>();
         numbers.add(30.0);
         numbers.add(30.0);
         numbers.add(30.0);
         double expected = 30.0;
         double actualans = ProblemSet.average(numbers);
-        assertEquals(expected, actualans,0.001);
+        assertEquals(expected, actualans, 0.001);
 
     }
+
     @Test
-    public void testaveragesingleton(){
+    public void testaveragesingleton() {
         ArrayList<Double> numbers = new ArrayList<Double>();
         numbers.add(30.0);
         double expected = 30.0;
         double actualans = ProblemSet.average(numbers);
-        assertEquals(expected, actualans,0.001);
+        assertEquals(expected, actualans, 0.001);
 
     }
+
     @Test
     public void testAverageOffByOne() {
         ArrayList<Double> numbers = new ArrayList<Double>();
@@ -48,25 +52,27 @@ public class TestProblemSet {
 
 
     @Test
-    public void testsumOfdigits(){
+    public void testsumOfdigits() {
         int s = 132;
         int expected = 6;
         int actual = ProblemSet.sumOfDigits(s);
         assertEquals(expected, actual);
     }
+
     @Test
-    public void testsumOfdigitsmorethan3dig(){
+    public void testsumOfdigitsmorethan3dig() {
         int s = 1323;
         int expected = 9;
         int actual = ProblemSet.sumOfDigits(s);
         assertEquals(expected, actual);
     }
+
     @Test
-    public void extratestsumofdigits(){
+    public void extratestsumofdigits() {
         int a = 0;
         int expected = 0;
         int actual = ProblemSet.sumOfDigits(a);
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -79,6 +85,7 @@ public class TestProblemSet {
         String actual = ProblemSet.bestKey(map);
         assertEquals(expected, actual);
     }
+
     @Test
     public void testbestkey2() {
         HashMap<String, Integer> map = new HashMap<String, Integer>();
@@ -90,6 +97,7 @@ public class TestProblemSet {
         assertEquals(expected, actual);
 
     }
+
     @Test
     public void testSumOfDigitsWithThreeDigitNumbers() {
         int num1 = 113;
@@ -101,6 +109,7 @@ public class TestProblemSet {
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
     }
+
     @Test
     public void testBestKeyposnegmax() {
         HashMap<String, Integer> map1 = new HashMap<>();
@@ -135,28 +144,17 @@ public class TestProblemSet {
         double actual = ProblemSet.average(numbers);
         assertEquals(expected, actual, 0.001);
     }
+
     @Test
     public void testSumOfDigitsNoNegatives() {
         int input = -143;
         int expected = 0;
         int actual = ProblemSet.sumOfDigits(input);
         assertEquals(expected, actual);
-    @Test
-    public void testAverageLargeList() {
-        ArrayList<Double> numbers = new ArrayList<Double>();
-        for (int i = 0; i < 1000000; i++) {
-            numbers.add((double)i);
-        }
-        double expected = 499999.5;
-        double actual = ProblemSet.average(numbers);
-        assertEquals(expected, actual, 0.001);
+
+
+        // TODO: Write testing for all 3 methods of the ratings.ProblemSet class
+
+
     }
-
-
-
-
-    // TODO: Write testing for all 3 methods of the ratings.ProblemSet class
-
-
-
 }
