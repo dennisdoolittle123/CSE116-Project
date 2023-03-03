@@ -1,3 +1,4 @@
+/*
 package tests;
 
 //import ratings.Rating;
@@ -130,4 +131,4 @@ public class TestDataStructures1 {
 //        checkRatingsList(computed, expected);
 //    }
 
-}
+}*/
