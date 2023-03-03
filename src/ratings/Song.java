@@ -1,19 +1,24 @@
 package ratings;
+import ratings.Rating;
+import ratings.Reviewer;
 import ratings.datastructures.LinkedListNode;
+import java.util.LinkedList;
+
+package ratings;
+
 import java.util.LinkedList;
 
 public class Song {
     private String title;
     private String artist;
     private String songID;
-    private LinkedList<Rating> ratings;
+    private LinkedListNode<Rating> ratings;
 
     public Song(String title, String artist, String songID) {
         this.title = title;
         this.artist = artist;
         this.songID = songID;
-        ratings = new LinkedList<Rating>();
-
+        this.ratings = null;
     }
 
     public String getTitle() {
@@ -40,45 +45,63 @@ public class Song {
         this.songID = songID;
     }
 
-
-    //task3
     public void addRating(Rating rating) {
-        if (!didReviewerRateSong(rating.getReviewerID())) {
-            ratings.add(rating);
+        if (didReviewerRateSong(rating.getReviewerID())) {
+            // Reviewer has already rated this song, don't add the new rating
+            return;
+        }
+        if (this.ratings == null) {
+            this.ratings = new LinkedListNode<Rating>(rating);
+        } else {
+            this.ratings.appendToTail(rating);
         }
     }
 
-    public LinkedList<Rating> getRatings() {
-        return ratings;
+    public LinkedListNode<Rating> getRatings() {
+        return this.ratings;
     }
 
     public double averageRating() {
         int count = 0;
-        double sum = 0;
-        for (Rating rating : ratings) {
-            int value = rating.getRating();
-            if (value != -1) {
-                sum += value;
+        int sum = 0;
+        LinkedListNode<Rating> curr = this.ratings;
+        while (curr != null) {
+            int rating = curr.getData().getRating();
+            if (rating != -1) {
                 count++;
+                sum += rating;
             }
+            curr = curr.getNext();
         }
-        if (count == 0) {
-            return 0;
-        } else {
-            return sum / count;
-        }
+        return (count == 0) ? 0 : ((double) sum / count);
     }
 
     public boolean didReviewerRateSong(String reviewerID) {
-        for (Rating rating : ratings) {
-            if (rating.getReviewerID().equals(reviewerID)) {
+        LinkedListNode<Rating> curr = this.ratings;
+        while (curr != null) {
+            if (curr.getData().getReviewerID().equals(reviewerID)) {
                 return true;
             }
+            curr = curr.getNext();
         }
         return false;
     }
 
     public void removeRatingByReviewer(Reviewer reviewer) {
-        ratings.removeIf(rating -> rating.getReviewerID().equals(reviewer.getReviewerID()));
+        LinkedListNode<Rating> prev = null;
+        LinkedListNode<Rating> curr = this.ratings;
+        while (curr != null) {
+            if (curr.getData().getReviewerID().equals(reviewer.getReviewerID())) {
+                if (prev == null) {
+                    // removing the first node in the list
+                    this.ratings = curr.getNext();
+                } else {
+                    prev.setNext(curr.getNext());
+                }
+                break;
+            }
+            prev = curr;
+            curr = curr.getNext();
+        }
     }
 }
